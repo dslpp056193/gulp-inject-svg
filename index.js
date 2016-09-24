@@ -40,8 +40,10 @@ module.exports = function(filePath) {
                 var svg;
 
                 try {
+                    
+                  filePath = ( filePath.slice(-1) == '/' ) ? filePath : filePath + '/';
 
-                  var inlineTag = fs.readFileSync("." + src).toString();
+                  var inlineTag = fs.readFileSync("./" + filePath + src).toString();
                   var className = el.attr('class');
                   var styles = el.attr('style');
 
